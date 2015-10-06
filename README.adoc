@@ -2,7 +2,7 @@
 :plugin-version: 0.1.0
 
 A GitBucket plug-in that provided AsciiDoc rendering capabilities.
-All `*.adoc`, `*.asciidoc` and `*.ad` files will be automatically rendered supporting most features of Asciidoctor, including rendering of a table of contents.
+All `.adoc`, `.asciidoc` and `.ad` files will be automatically rendered supporting most features of Asciidoctor, including rendering of a table of contents.
 
 == Installation
 
