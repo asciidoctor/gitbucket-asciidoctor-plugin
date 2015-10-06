@@ -1,6 +1,8 @@
 = gitbucket-asciidoctor-plugin
 :plugin-version: 0.1.0
 
+image:https://travis-ci.org/lefou/gitbucket-asciidoctor-plugin.svg["Build Status", link="https://travis-ci.org/lefou/gitbucket-asciidoctor-plugin"]
+
 A https://github.com/takezoe/gitbucket[GitBucket] plug-in that provided AsciiDoc rendering capabilities.
 All `.adoc`, `.asciidoc` and `.ad` files will be automatically rendered supporting most features of the http://asciidoctor.org/[Asciidoctor project], including rendering of a table of contents.
 
