@@ -4,11 +4,21 @@
 A GitBucket plug-in that provided AsciiDoc rendering capabilities.
 All `.adoc`, `.asciidoc` and `.ad` files will be automatically rendered supporting most features of Asciidoctor, including rendering of a table of contents.
 
+== Download
+
+You can download a precompiled version from the https://github.com/lefou/gitbucket-asciidoctor-plugin/releases[Release page].
+
+== Build from source
+
+----
+sbt -sbt-version 0.13.8 clean package
+----
+
+The build package is located at `target/scala-2.11/gitbucket-asciidoctor-plugin-{plugin-version}.jar`.
+
 == Installation
 
-* Compile with `sbt -sbt-version 0.13.8 clean package`
-* Copy `target/scala-2.11/gitbucket-asciidoctor-plugin-{plugin-version}.jar` into `GITBUCKET_HOME/plugins`.
-* Restart GitBucket.
+Download `gitbucket-asciidoctor-plugin-{plugin-version}.jar` or build the JAR file from source and copy it into `GITBUCKET_HOME/plugins`. Then restart GitBucket. That's it.
 
 == License
 
