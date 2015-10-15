@@ -3,8 +3,8 @@
 
 image:https://travis-ci.org/lefou/gitbucket-asciidoctor-plugin.svg["Build Status", link="https://travis-ci.org/lefou/gitbucket-asciidoctor-plugin"]
 
-A https://github.com/takezoe/gitbucket[GitBucket] plug-in that provided AsciiDoc rendering capabilities.
-All `.adoc`, `.asciidoc` and `.ad` files will be automatically rendered supporting most features of the http://asciidoctor.org/[Asciidoctor project], including rendering of a table of contents.
+A https://github.com/takezoe/gitbucket[GitBucket] plug-in that provides AsciiDoc rendering capabilities.
+All `.adoc` (and also the deprecated `.asciidoc` and `.ad` suffix) files will be automatically rendered as AsciiDoc, supporting most features of the http://asciidoctor.org/[Asciidoctor project], including rendering of a table of contents.
 
 == Download
 
