@@ -13,7 +13,7 @@ You can download a precompiled version from the https://github.com/lefou/gitbuck
 == Build from source
 
 ----
-sbt -sbt-version 0.13.8 clean package
+sbt clean package
 ----
 
 The built package is located at `target/scala-2.11/gitbucket-asciidoctor-plugin-{plugin-version}.jar`.
