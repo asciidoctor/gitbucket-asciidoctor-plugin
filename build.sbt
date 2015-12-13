@@ -15,10 +15,10 @@ lazy val root = (project in file(".")).
       "amateras-repo" at "http://amateras.sourceforge.jp/mvn/"
     ),
     libraryDependencies ++= Seq(
-      "gitbucket"          % "gitbucket-assembly" % "3.7.0"      % "provided",
+      "gitbucket"          % "gitbucket-assembly" % "3.9.0"      % "provided",
       "com.typesafe.play" %% "twirl-compiler"     % "1.0.4"      % "provided",
       "javax.servlet"      % "javax.servlet-api"  % "3.1.0"      % "provided",
-      "org.asciidoctor"    % "asciidoctorj"       % "1.5.2",
+      "org.asciidoctor"    % "asciidoctorj"       % "1.5.3",
       "net.sourceforge.htmlcleaner" % "htmlcleaner" % "2.10"
     ),
     javacOptions in compile ++= Seq("-target", "7", "-source", "7"),
