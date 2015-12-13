@@ -18,15 +18,26 @@ sbt clean package
 
 The built package is located at `target/scala-2.11/gitbucket-asciidoctor-plugin-{plugin-version}.jar`.
 
+----
+sbt assembly
+----
+
+This makes assembly package `target/scala-2.11/gitbucket-asciidoctor-plugin-assembly-{plugin-version}.jar` for deployment.
+
+
 == Installation
 
-Download `gitbucket-asciidoctor-plugin-{plugin-version}.jar` or build the JAR file from source and copy it into `GITBUCKET_HOME/plugins`. Then restart GitBucket. That's it.
+Download `gitbucket-asciidoctor-plugin-assembly-{plugin-version}.jar` or build the assembly package JAR file from source and copy it into `GITBUCKET_HOME/plugins`. Then restart GitBucket. That's it.
 
 == License
 
 This plugin is published under the Apache License, version 2.0.
 
 == ChangeLog
+
+=== gitbucket-asciidoctor-plugin 0.1.1 - 2015-12-13
+
+* Update version of libraryDependencies
 
 === gitbucket-asciidoctor-plugin 0.1.0 - 2015-10-06
 
