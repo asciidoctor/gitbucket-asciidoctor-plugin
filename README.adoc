@@ -8,7 +8,7 @@ All `.adoc` (and also the deprecated `.asciidoc` and `.ad` suffix) files will be
 
 == Download
 
-You can download a precompiled version from the https://github.com/lefou/gitbucket-asciidoctor-plugin/releases[Release page].
+You can download a precompiled version from the https://github.com/nobusugi246/gitbucket-asciidoctor-plugin/releases[Release page].
 
 == Build from source
 
