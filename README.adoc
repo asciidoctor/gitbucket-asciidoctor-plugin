@@ -1,5 +1,5 @@
 = gitbucket-asciidoctor-plugin
-:plugin-version: 0.1.0
+:plugin-version: 0.1.1
 
 image:https://travis-ci.org/lefou/gitbucket-asciidoctor-plugin.svg["Build Status", link="https://travis-ci.org/lefou/gitbucket-asciidoctor-plugin"]
 
