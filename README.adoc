@@ -1,32 +1,47 @@
 = gitbucket-asciidoctor-plugin
-:plugin-version: 0.1.0
+:plugin-version: 0.1.2
 
-image:https://travis-ci.org/lefou/gitbucket-asciidoctor-plugin.svg["Build Status", link="https://travis-ci.org/lefou/gitbucket-asciidoctor-plugin"]
+//image:https://travis-ci.org/lefou/gitbucket-asciidoctor-plugin.svg["Build Status", link="https://travis-ci.org/lefou/gitbucket-asciidoctor-plugin"]
 
-A https://github.com/takezoe/gitbucket[GitBucket] plug-in that provides AsciiDoc rendering capabilities.
+A https://github.com/gitbucket/gitbucket[GitBucket] plug-in that provides AsciiDoc rendering capabilities.
 All `.adoc` (and also the deprecated `.asciidoc` and `.ad` suffix) files will be automatically rendered as AsciiDoc, supporting most features of the http://asciidoctor.org/[Asciidoctor project], including rendering of a table of contents.
 
 == Download
 
-You can download a precompiled version from the https://github.com/lefou/gitbucket-asciidoctor-plugin/releases[Release page].
+You can download a precompiled version from the https://github.com/nobusugi246/gitbucket-asciidoctor-plugin/releases[Release page].
 
 == Build from source
 
 ----
-sbt -sbt-version 0.13.8 clean package
+sbt clean package
 ----
 
 The built package is located at `target/scala-2.11/gitbucket-asciidoctor-plugin-{plugin-version}.jar`.
 
+----
+sbt assembly
+----
+
+This makes assembly package `target/scala-2.11/gitbucket-asciidoctor-plugin-assembly-{plugin-version}.jar` for deployment.
+
+
 == Installation
 
-Download `gitbucket-asciidoctor-plugin-{plugin-version}.jar` or build the JAR file from source and copy it into `GITBUCKET_HOME/plugins`. Then restart GitBucket. That's it.
+Download `gitbucket-asciidoctor-plugin-assembly-{plugin-version}.jar` or build the assembly package JAR file from source and copy it into `GITBUCKET_HOME/plugins`. Then restart GitBucket. That's it.
 
 == License
 
 This plugin is published under the Apache License, version 2.0.
 
 == ChangeLog
+
+=== gitbucket-asciidoctor-plugin 0.1.2 - 2016-01-30
+
+* Update for GitBucket Ver.3.11
+
+=== gitbucket-asciidoctor-plugin 0.1.1 - 2015-12-13
+
+* Update version of libraryDependencies
 
 === gitbucket-asciidoctor-plugin 0.1.0 - 2015-10-06
 
