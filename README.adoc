@@ -1,5 +1,5 @@
 = gitbucket-asciidoctor-plugin
-:plugin-version: 0.1.1
+:plugin-version: 0.1.2
 
 image:https://travis-ci.org/lefou/gitbucket-asciidoctor-plugin.svg["Build Status", link="https://travis-ci.org/lefou/gitbucket-asciidoctor-plugin"]
 
@@ -34,6 +34,10 @@ Download `gitbucket-asciidoctor-plugin-assembly-{plugin-version}.jar` or build t
 This plugin is published under the Apache License, version 2.0.
 
 == ChangeLog
+
+=== gitbucket-asciidoctor-plugin 0.1.2 - 2016-01-30
+
+* Update for GitBucket Ver.3.11
 
 === gitbucket-asciidoctor-plugin 0.1.1 - 2015-12-13
 
