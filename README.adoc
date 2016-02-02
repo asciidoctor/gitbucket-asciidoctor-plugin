@@ -28,7 +28,7 @@ This makes the assembly package `target/scala-2.11/gitbucket-asciidoctor-plugin-
 
 == Installation
 
-Download `gitbucket-{gitbucket-bincompat-version}-asciidoctor-plugin-assembly-{plugin-version}.jar` or build the assembly package JAR file from source and copy it into `GITBUCKET_HOME/plugins`. Then restart GitBucket. That's it.
+Download `gitbucket-{gitbucket-bincompat-version}-asciidoctor-plugin-assembly-{plugin-version}.jar` or build the assembly package JAR file from source and copy it into `GITBUCKET_HOME/plugins`. If you have older versions of this plugin in this directory, you must delete them. Then restart GitBucket. That's it.
 
 == License
 
