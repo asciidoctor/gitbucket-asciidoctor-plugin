@@ -1,6 +1,6 @@
 val Organization = "com.github.lefou"
 val Name = "gitbucket-asciidoctor-plugin"
-val Version = "0.1"
+val Version = "0.1.1"
 val ScalaVersion = "2.11.6"
 
 lazy val root = (project in file(".")).
