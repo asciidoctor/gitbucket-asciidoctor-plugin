@@ -27,7 +27,7 @@ class Plugin extends gitbucket.core.plugin.Plugin {
     log.info("Result: " + test)
     val asciidoc = test.get
 
-    log.info("Reistering AsciidoctorRenderer for various extensions")
+    log.info("Registering AsciidoctorRenderer for various extensions")
     registry.addRenderer("adoc", asciidoc)
     registry.addRenderer("asciidoc", asciidoc)
     registry.addRenderer("ad", asciidoc)
