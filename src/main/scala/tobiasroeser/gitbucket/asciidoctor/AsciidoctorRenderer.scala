@@ -50,6 +50,8 @@ class AsciidoctorRenderer extends Renderer {
     options.safe(SafeMode.SECURE)
     val attributes = AttributesBuilder.attributes()
     attributes.showTitle(true)
+    attributes.attribute("env", "gitbucket")
+    attributes.attribute("env-gitbucket", true)
     options.attributes(attributes.get())
     val rendered = asciidoctor.render(asciidoc, options)
 
