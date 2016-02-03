@@ -3,6 +3,7 @@
 :gitbucket-bincompat-version: 3.11
 
 image:https://travis-ci.org/lefou/gitbucket-asciidoctor-plugin.svg["Build Status", link="https://travis-ci.org/lefou/gitbucket-asciidoctor-plugin"]
+image:https://badges.gitter.im/lefou/gitbucket-asciidoctor-plugin.svg["Gitter Chat", link="https://gitter.im/lefou/gitbucket-asciidoctor-plugin"]
 
 A https://github.com/gitbucket/gitbucket[GitBucket] plug-in that provides AsciiDoc rendering capabilities.
 All `.adoc` (and also the deprecated `.asciidoc` and `.ad` suffix) files will be automatically rendered as AsciiDoc, supporting most features of the http://asciidoctor.org/[Asciidoctor project], including rendering of a table of contents.
