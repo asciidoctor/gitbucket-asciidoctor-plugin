@@ -1,4 +1,6 @@
 = gitbucket-asciidoctor-plugin
+
+image:https://badges.gitter.im/lefou/gitbucket-asciidoctor-plugin.svg[link="https://gitter.im/lefou/gitbucket-asciidoctor-plugin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"]
 :plugin-version: 0.1.1
 :gitbucket-bincompat-version: 3.11
 
