@@ -1,6 +1,8 @@
 val Organization = "com.github.lefou"
 val Name = "gitbucket-asciidoctor-plugin"
-val Version = "0.1.1"
+// Don't forget to also update src/main/scala/Plugin.scala
+// GitBucket only support major and minor, but not micro versions!
+val Version = "1.0-SNAPSHOT"
 val ScalaVersion = "2.11.6"
 
 lazy val root = (project in file(".")).
