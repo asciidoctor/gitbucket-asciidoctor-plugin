@@ -53,6 +53,7 @@ class AsciidoctorRenderer extends Renderer {
     attributes.attribute("env", "gitbucket")
     attributes.attribute("env-gitbucket", true)
     attributes.attribute("outfilesuffix", ".adoc")
+    attributes.attribute("gitbucket-branch", branch)
     options.attributes(attributes.get())
     val rendered = asciidoctor.render(asciidoc, options)
 
