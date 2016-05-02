@@ -4,7 +4,7 @@ import org.slf4j.LoggerFactory
 
 import gitbucket.core.plugin.PluginRegistry
 import gitbucket.core.service.SystemSettingsService.SystemSettings
-import gitbucket.core.util.Version
+import io.github.gitbucket.solidbase.model.Version
 import javax.servlet.ServletContext
 import tobiasroeser.gitbucket.asciidoctor.AsciidoctorRenderer
 
@@ -15,7 +15,7 @@ class Plugin extends gitbucket.core.plugin.Plugin {
   override val pluginId: String = "asciidoctor"
   override val pluginName: String = "AsciiDoctor Plugin"
   override val description: String = "Provides AsciiDoc rendering for GitBucket."
-  override val versions: List[Version] = List(Version(1, 0))
+  override val versions: List[Version] = List(new Version("1.0.0-SNAPSHOT"))
 
   private[this] var renderer: Option[AsciidoctorRenderer] = None
 

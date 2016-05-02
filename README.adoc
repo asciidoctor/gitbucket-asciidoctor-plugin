@@ -1,6 +1,6 @@
 = gitbucket-asciidoctor-plugin
-:plugin-version: 0.1.1
-:gitbucket-bincompat-version: 3.11
+:plugin-version: 1.0.0-SNAPSHOT
+:gitbucket-bincompat-version: 4.0.0
 
 image:https://travis-ci.org/asciidoctor/gitbucket-asciidoctor-plugin.svg["Build Status", link="https://travis-ci.org/asciidoctor/gitbucket-asciidoctor-plugin"]
 image:https://badges.gitter.im/asciidoctor/gitbucket-asciidoctor-plugin.svg["Gitter Chat", link="https://gitter.im/asciidoctor/gitbucket-asciidoctor-plugin"]
