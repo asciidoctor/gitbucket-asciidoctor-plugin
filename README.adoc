@@ -1,6 +1,6 @@
 = gitbucket-asciidoctor-plugin
-:plugin-version: 1.0.0-SNAPSHOT
-:gitbucket-bincompat-version: 4.0.0
+:plugin-version: 1.0.0
+:gitbucket-bincompat-version: 4.0
 
 image:https://travis-ci.org/asciidoctor/gitbucket-asciidoctor-plugin.svg["Build Status", link="https://travis-ci.org/asciidoctor/gitbucket-asciidoctor-plugin"]
 image:https://badges.gitter.im/asciidoctor/gitbucket-asciidoctor-plugin.svg["Gitter Chat", link="https://gitter.im/asciidoctor/gitbucket-asciidoctor-plugin"]
@@ -18,13 +18,13 @@ You can download a precompiled version from the https://github.com/asciidoctor/g
 sbt clean package
 ----
 
-The built package is located at `target/scala-2.11/gitbucket-asciidoctor-plugin-{plugin-version}.jar`.
+The built package is located at `target/scala-2.11/gitbucket-{gitbucket-bincompat-version}-asciidoctor-plugin-{plugin-version}.jar`.
 
 ----
 sbt assembly
 ----
 
-This makes the assembly package `target/scala-2.11/gitbucket-asciidoctor-plugin-assembly-{plugin-version}.jar` for deployment.
+This makes the assembly package `target/scala-2.11/gitbucket-{gitbucket-bincompat-version}-asciidoctor-plugin-assembly-{plugin-version}.jar` for deployment.
 
 
 == Installation
@@ -41,6 +41,7 @@ This plugin is published under the Apache License, version 2.0.
 
 * Set the `outfilesuffix` attribute to `.adoc` to properly support xref's.
 * Introduced new attribute `gitbucket-branch` which contains the current selected git branch (or hash).
+* Requires GitBucket 4.0 or newer.
 
 === gitbucket-asciidoctor-plugin 0.1.1 - 2016-02-02
 
