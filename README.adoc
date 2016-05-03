@@ -37,7 +37,7 @@ This plugin is published under the Apache License, version 2.0.
 
 == ChangeLog
 
-=== gitbucket-asciidoctor-plugin {master}
+=== gitbucket-asciidoctor-plugin 1.0.0 - 2016-05-03
 
 * Set the `outfilesuffix` attribute to `.adoc` to properly support xref's.
 * Introduced new attribute `gitbucket-branch` which contains the current selected git branch (or hash).
