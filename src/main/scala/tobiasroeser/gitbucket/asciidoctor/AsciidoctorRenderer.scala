@@ -62,12 +62,13 @@ class AsciidoctorRenderer extends Renderer {
       case p => p.mkString("", "/", "/")
     }
     val relativeUrlPrefix = s"${helpers.url(repository)}/blob/${branch}/${path}"
-    prefixRelativeUrls(rendered, relativeUrlPrefix)
+    val relativeImageUrlPrefix = s"${helpers.url(repository)}/raw/${branch}/${path}"
+    prefixRelativeUrls(rendered, relativeUrlPrefix, relativeImageUrlPrefix)
   }
 
   private[this] val exceptionPrefixes = Seq("#", "/", "http://", "https://")
 
-  def prefixRelativeUrls(html: String, urlPrefix: String): String = {
+  def prefixRelativeUrls(html: String, urlPrefix: String, imageUrlPrefix: String): String = {
     val cleaner = new HtmlCleaner()
     val node = cleaner.clean(html)
     node.traverse(new TagNodeVisitor() {
@@ -77,6 +78,12 @@ class AsciidoctorRenderer extends Renderer {
             Option(tag.getAttributeByName("href")) foreach { href =>
               if (exceptionPrefixes.forall(p => !href.startsWith(p))) {
                 tag.addAttribute("href", s"${urlPrefix}${href}")
+              }
+            }
+          case tag: TagNode if tag.getName == "img" =>
+            Option(tag.getAttributeByName("src")) foreach { src =>
+              if (exceptionPrefixes.forall(p => !src.startsWith(p))) {
+                tag.addAttribute("src", s"${imageUrlPrefix}${src}")
               }
             }
           case _ =>
