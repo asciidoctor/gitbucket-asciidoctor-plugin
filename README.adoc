@@ -1,5 +1,5 @@
 = gitbucket-asciidoctor-plugin
-:plugin-version: 1.0.0
+:plugin-version: 1.0.1
 :gitbucket-bincompat-version: 4.0
 
 image:https://travis-ci.org/asciidoctor/gitbucket-asciidoctor-plugin.svg["Build Status", link="https://travis-ci.org/asciidoctor/gitbucket-asciidoctor-plugin"]
@@ -37,7 +37,7 @@ This plugin is published under the Apache License, version 2.0.
 
 == ChangeLog
 
-=== gitbucket-asciidoctor-plugin {master}
+=== gitbucket-asciidoctor-plugin 1.0.1 - 2016-06-01
 
 * Post-process `src` attribute of generated `<img>` tags to point to raw image resource.
 

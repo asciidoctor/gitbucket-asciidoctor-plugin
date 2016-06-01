@@ -1,10 +1,11 @@
 val Organization = "com.github.lefou"
-val Version = "1.0.0"
+// Don't forget to also update src/main/scala/Plugin.scala
+val Version = "1.0.1"
 
 val GitBucketVersion = "4.0"
+val GitBucketAssemblyVersion = s"${GitBucketVersion}.0"
 val Name = s"gitbucket-${GitBucketVersion}-asciidoctor-plugin"
 
-// Don't forget to also update src/main/scala/Plugin.scala
 val ScalaVersion = "2.11.8"
 
 lazy val root = (project in file(".")).
@@ -19,7 +20,7 @@ lazy val root = (project in file(".")).
       "amateras-repo" at "http://amateras.sourceforge.jp/mvn/"
     ),
     libraryDependencies ++= Seq(
-      "gitbucket"          % "gitbucket-assembly" % s"${GitBucketVersion}.0"      % "provided",
+      "gitbucket"          % "gitbucket-assembly" % GitBucketAssemblyVersion % "provided",
       "com.typesafe.play" %% "twirl-compiler"     % "1.0.4"      % "provided",
       "javax.servlet"      % "javax.servlet-api"  % "3.1.0"      % "provided",
       "org.asciidoctor"    % "asciidoctorj"       % "1.5.4",
