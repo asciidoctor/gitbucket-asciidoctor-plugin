@@ -10,12 +10,16 @@ import org.htmlcleaner.SimpleHtmlSerializer
 import org.htmlcleaner.TagNode
 import org.htmlcleaner.TagNodeVisitor
 import org.slf4j.LoggerFactory
+import java.util.Properties
+import java.io.File
+import collection.JavaConverters._
 
 import gitbucket.core.controller.Context
 import gitbucket.core.plugin.RenderRequest
 import gitbucket.core.plugin.Renderer
 import gitbucket.core.service.RepositoryService.RepositoryInfo
 import gitbucket.core.view.helpers
+import gitbucket.core.util.Directory.GitBucketHome
 import play.twirl.api.Html
 
 class AsciidoctorRenderer extends Renderer {
@@ -54,6 +58,20 @@ class AsciidoctorRenderer extends Renderer {
     attributes.attribute("env-gitbucket", true)
     attributes.attribute("outfilesuffix", ".adoc")
     attributes.attribute("gitbucket-branch", branch)
+
+    val asciidocAttributes = new File(GitBucketHome, "/asciidoctor.properties")
+    val propsJava = new Properties();
+    if(asciidocAttributes.exists){
+      val in = new java.io.FileInputStream(asciidocAttributes)
+      propsJava.load(in)
+      in.close()
+    }
+
+    val props = propsJava.stringPropertyNames().asScala
+    props.foreach(k => {
+      attributes.attribute(k, propsJava.getProperty(k))
+    })
+
     options.attributes(attributes.get())
     val rendered = asciidoctor.render(asciidoc, options)
 
