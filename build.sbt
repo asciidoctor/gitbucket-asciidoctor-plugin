@@ -1,6 +1,6 @@
 val Organization = "com.github.lefou"
 // Don't forget to also update src/main/scala/Plugin.scala
-val Version = "1.0.1"
+val Version = "1.0.2"
 
 val GitBucketVersion = "4.0"
 val GitBucketAssemblyVersion = s"${GitBucketVersion}.0"
@@ -27,7 +27,7 @@ lazy val root = (project in file(".")).
       "net.sourceforge.htmlcleaner" % "htmlcleaner" % "2.16"
     ),
     javacOptions in compile ++= Seq("-target", "7", "-source", "7"),
-    
+
     assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false)
-    
+
   )
