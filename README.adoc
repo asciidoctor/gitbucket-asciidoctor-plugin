@@ -12,15 +12,6 @@ All `.adoc` (and also the deprecated `.asciidoc` and `.ad` suffix) files will be
 
 You can download a precompiled version from the https://github.com/asciidoctor/gitbucket-asciidoctor-plugin/releases[Release page].
 
-== Features
-
-===  Builtin attributes
-You can change http://asciidoctor.org/docs/user-manual/#builtin-attributes[builtin attributes] with GITBUCKET_HOME/asciidoctor.properties file
-
-[source,properties]
-----
-toc-title=Table of Adventures
-----
 
 
 == Build from source
@@ -44,7 +35,16 @@ Download `gitbucket-{gitbucket-bincompat-version}-asciidoctor-plugin-assembly-{p
 
 == Configuration
 
-You can tweak the asciidoctor rendering engine by providing attributes via the properties file: `$GITBUCKET_HOME/asciidoc.properties`.
+===  Asciidoctor builtin attributes
+
+You can tweak the asciidoctor rendering engine by customizing the
+http://asciidoctor.org/docs/user-manual/#builtin-attributes[builtin attributes]. Simple edit the properties file at `GITBUCKET_HOME/asciidoctor.properties`.
+
+.Example: Set `toc` attribute in the `GITBUCKET_HOME/asciidoctor.properties` file
+[source,properties]
+----
+toc=preamble
+----
 
 
 == License
