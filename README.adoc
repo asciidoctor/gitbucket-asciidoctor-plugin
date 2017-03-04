@@ -12,6 +12,17 @@ All `.adoc` (and also the deprecated `.asciidoc` and `.ad` suffix) files will be
 
 You can download a precompiled version from the https://github.com/asciidoctor/gitbucket-asciidoctor-plugin/releases[Release page].
 
+== Features
+
+===  Builtin attributes
+You can change http://asciidoctor.org/docs/user-manual/#builtin-attributes[builtin attributes] with GITBUCKET_HOME/asciidoctor.properties file
+
+[source,properties]
+----
+toc-title=Table of Adventures
+----
+
+
 == Build from source
 
 ----
