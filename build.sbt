@@ -2,11 +2,14 @@ val Organization = "com.github.lefou"
 // Don't forget to also update src/main/scala/Plugin.scala
 val Version = "1.0.2"
 
-val GitBucketVersion = "4.0"
-val GitBucketAssemblyVersion = s"${GitBucketVersion}.0"
+val ScalaVersion = "2.12.1"
+
+val GitBucketVersion = "4.10"
+val GitBucketAssembly = "io.github.gitbucket" %% "gitbucket" % s"${GitBucketVersion}.0"
+val JavaOptions = Seq("-target", "8", "-source", "8")
+
 val Name = s"gitbucket-${GitBucketVersion}-asciidoctor-plugin"
 
-val ScalaVersion = "2.11.8"
 
 lazy val root = (project in file(".")).
   settings(
@@ -20,13 +23,12 @@ lazy val root = (project in file(".")).
       "amateras-repo" at "http://amateras.sourceforge.jp/mvn/"
     ),
     libraryDependencies ++= Seq(
-      "gitbucket"          % "gitbucket-assembly" % GitBucketAssemblyVersion % "provided",
-      "com.typesafe.play" %% "twirl-compiler"     % "1.0.4"      % "provided",
-      "javax.servlet"      % "javax.servlet-api"  % "3.1.0"      % "provided",
-      "org.asciidoctor"    % "asciidoctorj"       % "1.5.4",
+      GitBucketAssembly % "provided",
+      "javax.servlet" % "javax.servlet-api" % "3.1.0" % "provided",
+      "org.asciidoctor" % "asciidoctorj" % "1.5.4",
       "net.sourceforge.htmlcleaner" % "htmlcleaner" % "2.16"
     ),
-    javacOptions in compile ++= Seq("-target", "7", "-source", "7"),
+    javacOptions in compile ++= JavaOptions,
 
     assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false)
 
