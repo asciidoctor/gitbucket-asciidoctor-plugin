@@ -15,7 +15,10 @@ class Plugin extends gitbucket.core.plugin.Plugin {
   override val pluginId: String = "asciidoctor"
   override val pluginName: String = "AsciiDoctor Plugin"
   override val description: String = "Provides AsciiDoc rendering for GitBucket."
-  override val versions: List[Version] = List(new Version("1.0.1"))
+  override val versions: List[Version] = List(
+    new Version("1.0.1"),
+    new Version("1.0.2")
+  )
 
   private[this] var renderer: Option[AsciidoctorRenderer] = None
 

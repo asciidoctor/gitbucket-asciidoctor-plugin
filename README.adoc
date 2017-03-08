@@ -1,6 +1,8 @@
 = gitbucket-asciidoctor-plugin
-:plugin-version: 1.0.1
-:gitbucket-bincompat-version: 4.0
+:plugin-version: 1.0.2
+:scala-version: 2.12
+:gitbucket-bincompat-version: 4.10
+:gitbucket-bincompat-version-hyphens: 4-10
 
 image:https://travis-ci.org/asciidoctor/gitbucket-asciidoctor-plugin.svg["Build Status", link="https://travis-ci.org/asciidoctor/gitbucket-asciidoctor-plugin"]
 image:https://badges.gitter.im/asciidoctor/gitbucket-asciidoctor-plugin.svg["Gitter Chat", link="https://gitter.im/asciidoctor/gitbucket-asciidoctor-plugin"]
@@ -20,13 +22,13 @@ You can download a precompiled version from the https://github.com/asciidoctor/g
 sbt clean package
 ----
 
-The built package is located at `target/scala-2.11/gitbucket-{gitbucket-bincompat-version}-asciidoctor-plugin-{plugin-version}.jar`.
+The built package is located at `target/scala-{scala-version}/gitbucket-{gitbucket-bincompat-version-hyphens}-asciidoctor-plugin_{scala-version}-{plugin-version}.jar`.
 
 ----
 sbt assembly
 ----
 
-This makes the assembly package `target/scala-2.11/gitbucket-{gitbucket-bincompat-version}-asciidoctor-plugin-assembly-{plugin-version}.jar` for deployment.
+This makes the assembly package `target/scala-{scala-version}/gitbucket-{gitbucket-bincompat-version}-asciidoctor-plugin-assembly-{plugin-version}.jar` for deployment.
 
 
 == Installation
@@ -53,7 +55,7 @@ This plugin is published under the Apache License, version 2.0.
 
 == ChangeLog
 
-=== gitbucket-asciidoctor-plugin 1.0.2 - 2017-03-04
+=== gitbucket-asciidoctor-plugin 1.0.2 - 2017-03-08
 
 * Added support to provide attributes to the asciidoctor engine via properties file in gitbucket directory.
 
