@@ -2,11 +2,17 @@ val Organization = "com.github.lefou"
 // Don't forget to also update src/main/scala/Plugin.scala
 val Version = "1.0.2"
 
-val ScalaVersion = "2.12.1"
+val CompatMode = System.getenv("COMPAT_MODE") == "1"
 
-val GitBucketVersion = "4.10"
-val GitBucketAssembly = "io.github.gitbucket" %% "gitbucket" % s"${GitBucketVersion}.0"
-val JavaOptions = Seq("-target", "8", "-source", "8")
+val ScalaVersion = if(CompatMode) "2.11.8" else "2.12.1"
+
+val GitBucketVersion = if(CompatMode) "4.0" else "4.10"
+val GitBucketAssembly =
+  if(CompatMode) "gitbucket" % "gitbucket-assembly" % s"${GitBucketVersion}.0"
+  else "io.github.gitbucket" %% "gitbucket" % s"${GitBucketVersion}.0"
+val JavaOptions =
+  if(CompatMode) Seq("-target", "7", "-source", "7")
+  else Seq("-target", "8", "-source", "8")
 
 val Name = s"gitbucket-${GitBucketVersion}-asciidoctor-plugin"
 
