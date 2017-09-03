@@ -1,12 +1,12 @@
 val Organization = "com.github.lefou"
 // Don't forget to also update src/main/scala/Plugin.scala
-val Version = "1.0.2"
+val Version = "1.0.3"
 
 val CompatMode = System.getenv("COMPAT_MODE") == "1"
 
-val ScalaVersion = if(CompatMode) "2.11.8" else "2.12.1"
+val ScalaVersion = if(CompatMode) "2.11.8" else "2.12.3"
 
-val GitBucketVersion = if(CompatMode) "4.0" else "4.10"
+val GitBucketVersion = if(CompatMode) "4.0" else "4.16"
 val GitBucketAssembly =
   if(CompatMode) "gitbucket" % "gitbucket-assembly" % s"${GitBucketVersion}.0"
   else "io.github.gitbucket" %% "gitbucket" % s"${GitBucketVersion}.0"
@@ -31,8 +31,8 @@ lazy val root = (project in file(".")).
     libraryDependencies ++= Seq(
       GitBucketAssembly % "provided",
       "javax.servlet" % "javax.servlet-api" % "3.1.0" % "provided",
-      "org.asciidoctor" % "asciidoctorj" % "1.5.4",
-      "net.sourceforge.htmlcleaner" % "htmlcleaner" % "2.16"
+      "org.asciidoctor" % "asciidoctorj" % "1.5.6",
+      "net.sourceforge.htmlcleaner" % "htmlcleaner" % "2.21"
     ),
     javacOptions in compile ++= JavaOptions,
 
