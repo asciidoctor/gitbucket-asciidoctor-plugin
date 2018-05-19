@@ -32,6 +32,7 @@ class AsciidoctorRenderer extends Renderer {
     case None =>
       log.info("About to create Asciidoctor")
       _asciidoctor = Option(Asciidoctor.Factory.create(getClass().getClassLoader()))
+      _asciidoctor.get.javaExtensionRegistry().includeProcessor(classOf[AsciidoctorJgitIncludeProcessor])
       _asciidoctor.get
     case Some(a) => a
   }
@@ -58,6 +59,8 @@ class AsciidoctorRenderer extends Renderer {
     attributes.attribute("env-gitbucket", true)
     attributes.attribute("outfilesuffix", ".adoc")
     attributes.attribute("gitbucket-branch", branch)
+    attributes.attribute("gitbucket-repository", repository)
+    attributes.attribute("gitbucket-path", filePath.mkString("/"))
 
     val asciidocAttributes = new File(GitBucketHome, "/asciidoctor.properties")
     val propsJava = new Properties();
