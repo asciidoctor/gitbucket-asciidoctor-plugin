@@ -7,7 +7,7 @@ help:
 
 .PHONY: clean # Clean output files (target dir)
 clean:
-	rm -rf target/
+	rm -rf target/ project/target/
 
 .PHONY: build # Build the project and the plugin package
 build:
