@@ -8,4 +8,4 @@ jdk:
 scala:
  - 2.12.6
 
-script: make package
+script: make travis
