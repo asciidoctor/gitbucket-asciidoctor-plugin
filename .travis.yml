@@ -6,6 +6,6 @@ jdk:
   - oraclejdk8
 
 scala:
- - 2.12.1
+ - 2.12.6
 
-script: travis_wait sbt ++$TRAVIS_SCALA_VERSION test
+script: make package
