@@ -1,8 +1,7 @@
 = gitbucket-asciidoctor-plugin
-:plugin-version: 1.0.2
+:plugin-version: 1.1.1
 :scala-version: 2.12
-:gitbucket-bincompat-version: 4.10
-:gitbucket-bincompat-version-hyphens: 4-10
+:gitbucket-bincompat-version: 4.26.0
 
 image:https://travis-ci.org/asciidoctor/gitbucket-asciidoctor-plugin.svg["Build Status", link="https://travis-ci.org/asciidoctor/gitbucket-asciidoctor-plugin"]
 image:https://badges.gitter.im/asciidoctor/gitbucket-asciidoctor-plugin.svg["Gitter Chat", link="https://gitter.im/asciidoctor/gitbucket-asciidoctor-plugin"]
@@ -18,22 +17,37 @@ You can download a precompiled version from the https://github.com/asciidoctor/g
 
 == Build from source
 
-----
-sbt clean package
-----
-
-The built package is located at `target/scala-{scala-version}/gitbucket-{gitbucket-bincompat-version-hyphens}-asciidoctor-plugin_{scala-version}-{plugin-version}.jar`.
-
+.With sbt
 ----
 sbt assembly
 ----
 
-This makes the assembly package `target/scala-{scala-version}/gitbucket-{gitbucket-bincompat-version}-asciidoctor-plugin-assembly-{plugin-version}.jar` for deployment.
+.Or with GNU Make
+----
+make build
+----
+
+You will find the packages plugin under `target/scala_2.12/gitbucket-asciidoctor-plugin-gitbucket_{gitbucket-bincompat-version}-{plugin-version}.jar`
 
 
 == Installation
 
-Download `gitbucket-{gitbucket-bincompat-version}-asciidoctor-plugin-assembly-{plugin-version}.jar` or build the assembly package JAR file from source and copy it into `GITBUCKET_HOME/plugins`. If you have older versions of this plugin in this directory, you must delete them. Then restart GitBucket. That's it.
+Download `gitbucket-asciidoctor-plugin-gitbucket_{gitbucket-bincompat-version}-{plugin-version}.jar`
+ or build the assembly package JAR file from source and copy it into `GITBUCKET_HOME/plugins`.
+ If you have older versions of this plugin in this directory, you must delete them.
+ Then restart GitBucket.
+ That's it.
+
+== Local Test Server
+
+You can start a local GitBucket instance with this plugin already installed by running:
+
+----
+make localServer
+----
+
+Point your browser to http://localhost:8080. The administrator login is root/root.
+
 
 == Configuration
 
