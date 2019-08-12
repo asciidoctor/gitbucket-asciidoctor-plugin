@@ -1,5 +1,5 @@
 VERSION = 1.1.0
-GITBUCKET_VERSION = 4.26.0
+GITBUCKET_VERSION = 4.32.0
 
 .PHONY: help # List of targets with descriptions
 help:
@@ -24,5 +24,5 @@ target/gitbucket-${GITBUCKET_VERSION}.war:
 localServer: build target/gitbucket-${GITBUCKET_VERSION}.war
 	mkdir -p target/DATA/plugins
 	rm -rf target/DATA/plugins/*
-	cp target/scala-2.12/gitbucket-asciidoctor-plugin-gitbucket_${GITBUCKET_VERSION}-${VERSION}.jar target/DATA/plugins
+	cp target/scala-2.13/gitbucket-asciidoctor-plugin-gitbucket_${GITBUCKET_VERSION}-${VERSION}.jar target/DATA/plugins
 	java -jar target/gitbucket-${GITBUCKET_VERSION}.war --gitbucket.home=target/DATA

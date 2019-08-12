@@ -1,8 +1,8 @@
 name := "gitbucket-asciidoctor-plugin"
 organization := "com.github.lefou"
 version := "1.1.0"
-scalaVersion := "2.12.6"
-gitbucketVersion := "4.26.0"
+scalaVersion := "2.13.0"
+gitbucketVersion := "4.32.0"
 sourcesInBase := false
 
 resolvers ++= Seq(
