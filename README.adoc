@@ -1,7 +1,7 @@
 = gitbucket-asciidoctor-plugin
 :plugin-version: 1.1.1
-:scala-version: 2.12
-:gitbucket-bincompat-version: 4.26.0
+:scala-version: 2.13
+:gitbucket-bincompat-version: 4.32.0
 
 image:https://travis-ci.org/asciidoctor/gitbucket-asciidoctor-plugin.svg["Build Status", link="https://travis-ci.org/asciidoctor/gitbucket-asciidoctor-plugin"]
 image:https://badges.gitter.im/asciidoctor/gitbucket-asciidoctor-plugin.svg["Gitter Chat", link="https://gitter.im/asciidoctor/gitbucket-asciidoctor-plugin"]
@@ -27,7 +27,7 @@ sbt assembly
 make build
 ----
 
-You will find the packages plugin under `target/scala_2.12/gitbucket-asciidoctor-plugin-gitbucket_{gitbucket-bincompat-version}-{plugin-version}.jar`
+You will find the packages plugin under `target/scala_2.13/gitbucket-asciidoctor-plugin-gitbucket_{gitbucket-bincompat-version}-{plugin-version}.jar`
 
 
 == Installation
