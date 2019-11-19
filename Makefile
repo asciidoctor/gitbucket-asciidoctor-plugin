@@ -1,5 +1,6 @@
 VERSION = 1.1.0
 GITBUCKET_VERSION = 4.32.0
+SCALA_BIN_VERSION=2.13
 
 .PHONY: help # List of targets with descriptions
 help:
@@ -13,16 +14,21 @@ clean:
 build:
 	sbt assembly
 
+target/gitbucket-$(GITBUCKET_VERSION)-asciidoctor-plugin-$(VERSION).jar: build
+	cp target/scala-$(SCALA_BIN_VERSION)/gitbucket-asciidoctor-plugin-$(VERSION).jar target/gitbucket-$(GITBUCKET_VERSION)-asciidoctor-plugin-$(VERSION).jar
+
+stamped-jar: target/gitbucket-$(GITBUCKET_VERSION)-asciidoctor-plugin-$(VERSION).jar
+
 .PHONY: travis # Build on travis
 travis: build
 
 target/gitbucket-${GITBUCKET_VERSION}.war:
 	mkdir -p target
-	wget https://github.com/gitbucket/gitbucket/releases/download/${GITBUCKET_VERSION}/gitbucket.war -O target/gitbucket-${GITBUCKET_VERSION}.war
+	wget https://github.com/gitbucket/gitbucket/releases/download/$(GITBUCKET_VERSION)/gitbucket.war -O target/gitbucket-$(GITBUCKET_VERSION).war
 
 .PHONY: localServer # Start a local gitbucket server with the plugin installed
-localServer: build target/gitbucket-${GITBUCKET_VERSION}.war
+localServer: stamped-jar target/gitbucket-$(GITBUCKET_VERSION).war
 	mkdir -p target/DATA/plugins
 	rm -rf target/DATA/plugins/*
-	cp target/scala-2.13/gitbucket-asciidoctor-plugin-gitbucket_${GITBUCKET_VERSION}-${VERSION}.jar target/DATA/plugins
-	java -jar target/gitbucket-${GITBUCKET_VERSION}.war --gitbucket.home=target/DATA
+	cp target/gitbucket-$(GITBUCKET_VERSION)-asciidoctor-plugin-$(VERSION).jar target/DATA/plugins
+	java -jar target/gitbucket-$(GITBUCKET_VERSION).war --gitbucket.home=target/DATA

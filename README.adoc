@@ -1,5 +1,5 @@
 = gitbucket-asciidoctor-plugin
-:plugin-version: 1.1.1
+:plugin-version: 1.1.0
 :scala-version: 2.13
 :gitbucket-bincompat-version: 4.32.0
 
