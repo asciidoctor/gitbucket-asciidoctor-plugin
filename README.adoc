@@ -69,6 +69,14 @@ This plugin is published under the Apache License, version 2.0.
 
 == ChangeLog
 
+=== gitbucket-asciidoctor-plugin 1.1.0 - 2019-11-19
+
+* Support fot GitBucket 4.32.0
+* Updated dependencies
+* Added include support (for files in the same repository)
+
+See https://github.com/asciidoctor/gitbucket-asciidoctor-plugin/milestone/6?closed=1[list of closed issues and pull requests].
+
 === gitbucket-asciidoctor-plugin 1.0.2 - 2017-03-08
 
 * Added support to provide attributes to the asciidoctor engine via properties file in gitbucket directory.
