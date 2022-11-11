@@ -2,8 +2,10 @@
 :plugin-version: 1.1.0
 :scala-version: 2.13
 :gitbucket-bincompat-version: 4.32.0
+:link-github: https://github.com/asciidoctor/gitbucket-asciidoctor-plugin
 
-image:https://travis-ci.org/asciidoctor/gitbucket-asciidoctor-plugin.svg["Build Status", link="https://travis-ci.org/asciidoctor/gitbucket-asciidoctor-plugin"]
+
+image:{link-github}/actions/workflows/build.yml/badge.svg["Build Status (build.yml)", link="{link-github}/actions/workflows/build.yml"]
 image:https://badges.gitter.im/asciidoctor/gitbucket-asciidoctor-plugin.svg["Gitter Chat", link="https://gitter.im/asciidoctor/gitbucket-asciidoctor-plugin"]
 
 A https://github.com/gitbucket/gitbucket[GitBucket] plug-in that provides AsciiDoc rendering capabilities.
@@ -11,8 +13,7 @@ All `.adoc` (and also the deprecated `.asciidoc` and `.ad` suffix) files will be
 
 == Download
 
-You can download a precompiled version from the https://github.com/asciidoctor/gitbucket-asciidoctor-plugin/releases[Release page].
-
+You can download a precompiled version from the {link-github}/releases[Release page].
 
 
 == Build from source
