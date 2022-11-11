@@ -1,20 +1,17 @@
 package tobiasroeser.gitbucket.asciidoctor
 
-import java.io.File
-import java.net.URI
-import java.util
-
-import gitbucket.core.service.{AccountService, RepositoryService}
 import gitbucket.core.service.RepositoryService.RepositoryInfo
-import gitbucket.core.util.{JGitUtil, StringUtil}
-import gitbucket.core.util.Directory._
-import gitbucket.core.util.SyntaxSugars._
+import gitbucket.core.service.{AccountService, RepositoryService}
+import gitbucket.core.util.{Directory, JGitUtil, StringUtil}
 import org.asciidoctor.ast.DocumentRuby
 import org.asciidoctor.extension.{IncludeProcessor, PreprocessorReader}
 import org.eclipse.jgit.api.Git
 import org.slf4j.LoggerFactory
 
-import scala.collection.JavaConverters._
+import java.net.URI
+import java.util
+import scala.jdk.CollectionConverters._
+import scala.util.Using
 
 class AsciidoctorJgitIncludeProcessor(config: java.util.Map[String, Object]) extends IncludeProcessor(config)
   with RepositoryService with AccountService{
@@ -30,7 +27,7 @@ class AsciidoctorJgitIncludeProcessor(config: java.util.Map[String, Object]) ext
     val branch = document.getAttr("gitbucket-branch").toString
     val targetPath = documentPath.resolve(target)
 
-    using(Git.open(getRepositoryDir(repository.owner, repository.name))) { git =>
+    Using.resource(Git.open(Directory.getRepositoryDir(repository.owner, repository.name))) { git =>
       val revCommit = JGitUtil.getRevCommitFromId(git, git.getRepository.resolve(branch))
       JGitUtil.getContentFromPath(git, revCommit.getTree, targetPath.toString, true).map{ bytes =>
         val content = StringUtil.convertFromByteArray(bytes)
