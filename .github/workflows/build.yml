@@ -21,4 +21,5 @@ jobs:
 
       # Uploads information to the GitHub dependency graph and unblocking Dependabot alerts for the repository
       - name: Upload dependency graph
+        if: github.repository == 'asciidoctor/gitbucket-asciidoctor-plugin' && github.ref == 'refs/heads/main'
         uses: scalacenter/sbt-dependency-submission@ab086b50c947c9774b70f39fc7f6e20ca2706c91
