@@ -1,7 +1,7 @@
 name := "gitbucket-asciidoctor-plugin"
 organization := "com.github.lefou"
 version := "1.1.0"
-scalaVersion := "2.13.0"
+scalaVersion := "2.13.9"
 gitbucketVersion := "4.32.0"
 sourcesInBase := false
 
