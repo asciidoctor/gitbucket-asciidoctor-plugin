@@ -12,7 +12,7 @@ import org.htmlcleaner.TagNodeVisitor
 import org.slf4j.LoggerFactory
 import java.util.Properties
 import java.io.File
-import collection.JavaConverters._
+import scala.jdk.CollectionConverters._
 
 import gitbucket.core.controller.Context
 import gitbucket.core.plugin.RenderRequest
